@@ -133,6 +133,20 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore.km41.xml \
+    libkeymaster_messages.vendor \
+    lib_android_keymaster_keymint_utils.vendor \
+    libkeymint.vendor \
+    libkeymaster_portable.vendor \
+    libkeymaster4.vendor \
+    libkeymaster41.vendor \
+    libkeymaster4_1support.vendor \
+    libkeymaster4support.vendor \
+    libkeystore-wifi-hidl \
+    libkeystore-engine-wifi-hidl
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
