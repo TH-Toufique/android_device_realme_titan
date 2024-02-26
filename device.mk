@@ -87,6 +87,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libpcap.vendor
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0.vendor \
+    android.hardware.graphics.allocator@3.0.vendor \
+    android.hardware.graphics.allocator@4.0.vendor \
+    android.hardware.graphics.composer@2.3-service \
+    android.hardware.renderscript@1.0-impl \
+    libhwc2on1adapter \
+    libdrm.vendor \
+    libdrm \
+    disable_configstore
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
