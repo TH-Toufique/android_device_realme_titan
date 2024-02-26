@@ -250,5 +250,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX3686/RMX3686-vendor.mk)
