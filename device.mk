@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    libstdc++.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
