@@ -51,6 +51,12 @@ PRODUCT_PACKAGES += \
     libdynproc \
     libhapticgenerator
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1.vendor \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
