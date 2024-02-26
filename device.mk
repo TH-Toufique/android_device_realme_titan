@@ -286,7 +286,7 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.control@1.1.vendor
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy
+    android.hardware.wifi@1.0-service-lazy.RMX3686
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX3686/RMX3686-vendor.mk)
