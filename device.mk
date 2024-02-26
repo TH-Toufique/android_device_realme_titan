@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6.vendor \
     libcamera2ndk_vendor
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
