@@ -83,6 +83,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
+# DMC
+PRODUCT_PACKAGES += \
+    libpcap.vendor
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
