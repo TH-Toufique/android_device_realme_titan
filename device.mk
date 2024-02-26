@@ -57,6 +57,11 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.audio@2.1-impl
 
+# Biometrics
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.common-V1-ndk_platform.vendor \
+    android.hardware.biometrics.fingerprint@2.1-service
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
