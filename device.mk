@@ -246,5 +246,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
 	hardware/oplus
 
+# Soundtrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3-impl
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX3686/RMX3686-vendor.mk)
