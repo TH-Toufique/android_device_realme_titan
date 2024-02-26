@@ -67,6 +67,9 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 # Platform
 TARGET_BOARD_PLATFORM := mt6877
 
+# Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+
 
 # Inherit the proprietary files
 include vendor/realme/RMX3686/BoardConfigVendor.mk
