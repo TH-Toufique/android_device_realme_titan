@@ -41,6 +41,13 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
