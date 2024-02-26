@@ -218,5 +218,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-mediatek \
     android.hardware.power@1.2.vendor
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio@1.6.vendor
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX3686/RMX3686-vendor.mk)
