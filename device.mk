@@ -255,5 +255,14 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.hardware.thermal@1.0-impl
 
+# Update engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX3686/RMX3686-vendor.mk)
