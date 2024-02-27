@@ -84,6 +84,9 @@ ro.odm.camera.smartscanmode=1
 ro.odm.rear_camera_sub2=1
 ro.odm.rear_camera_sub=1
 ro.vendor.mtk_zsdhdr_support=1
+ro.odm.defaultmodes=LowLight,Video,Picture,UHD,Picselfie
+ro.odm.picturezoom.mode.name=50MP
+ro.odm.fps60=1
 
 # DRM
 drm.service.enabled=true
