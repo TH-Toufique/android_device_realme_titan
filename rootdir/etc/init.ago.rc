@@ -22,7 +22,7 @@ on post-fs-data
     chmod +x /vendor/bin/swap_enable.sh
     start swap_enable_init
 #else
-    #swapon_all /vendor/etc/fstab.enableswap
+    #swapon_all /vendor/etc/fstab.mt6877
 #endif
 
 on property:sys.boot_completed=1
