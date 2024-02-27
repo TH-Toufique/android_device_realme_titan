@@ -23,10 +23,12 @@
 #include "BiometricsFingerprint.h"
 
 #include <inttypes.h>
+#include <pthread.h>
 #include <unistd.h>
 
 #define NOTIFY_FINGER_DOWN 1536
 #define NOTIFY_FINGER_UP 1537
+#define GF_ERROR_CANCELED 1009
 
 
 namespace android {
@@ -178,11 +180,34 @@ Return<uint64_t> BiometricsFingerprint::preEnroll()  {
     return mDevice->pre_enroll(mDevice);
 }
 
+void *BiometricsFingerprint::cancelErr(void *data) {
+    BiometricsFingerprint *thisPtr = static_cast<BiometricsFingerprint *>(data);
+
+    sleep(1);
+    const uint64_t devId = reinterpret_cast<uint64_t>(thisPtr->mDevice);
+    if (!thisPtr->mClientCallback->onError(devId, FingerprintError::ERROR_CANCELED, 0).isOk()) {
+        ALOGE("failed to invoke fingerprint onError callback");
+    }
+
+    return NULL;
+}
+
 Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
         uint32_t gid, uint32_t timeoutSec) {
     const hw_auth_token_t* authToken =
         reinterpret_cast<const hw_auth_token_t*>(hat.data());
-    return ErrorFilter(mDevice->enroll(mDevice, authToken, gid, timeoutSec));
+    int32_t error = mDevice->enroll(mDevice, authToken, gid, timeoutSec);
+
+    if (error == GF_ERROR_CANCELED) {
+        pthread_t cancelErrTh;
+        ALOGE("onError vendor(%d)", error);
+
+        pthread_create(&cancelErrTh, NULL, BiometricsFingerprint::cancelErr, sInstance);
+
+        error = 0;
+    }
+
+    return ErrorFilter(error);
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
@@ -221,7 +246,18 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         uint32_t gid) {
-    return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
+    int32_t error = mDevice->authenticate(mDevice, operationId, gid);
+
+    if (error == GF_ERROR_CANCELED) {
+        pthread_t cancelErrTh;
+
+        ALOGE("onError vendor(%d)", error);
+        pthread_create(&cancelErrTh, NULL, cancelErr, sInstance);
+
+        error = 0;
+    }
+
+    return ErrorFilter(error);
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {

@@ -77,6 +77,7 @@ private:
     static FingerprintError VendorErrorFilter(int32_t error, int32_t* vendorCode);
     static FingerprintAcquiredInfo VendorAcquiredFilter(int32_t error, int32_t* vendorCode);
     static BiometricsFingerprint* sInstance;
+    static void *cancelErr(void *data);
 
     std::mutex mClientCallbackMutex;
     sp<IBiometricsFingerprintClientCallback> mClientCallback;
