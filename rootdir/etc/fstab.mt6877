@@ -168,4 +168,4 @@ my_manifest /mnt/vendor/my_manifest ext4 ro,barrier=1 wait,slotselect,logical,fi
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
 
 # ZRAM
-/dev/block/zram0                none               swap defaults                                                 zramsize=55%
+/dev/block/zram0                none               swap defaults                                                 zramsize=55%,max_comp_streams=8
