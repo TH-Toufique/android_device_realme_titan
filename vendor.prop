@@ -223,7 +223,7 @@ ro.odm.board_network_type=GB/WB/CB/LfB/LtB/NB
 ro.odm.tee=2
 ro.odm.fingerprint_module=1
 ro.odm.fingerprint=gw9578
-ro.odm.auto_test=1
+ro.odm.auto_test=0
 ro.odm.auto_test_show_results=8
 ro.odm.doujia_dog_free=1
 
