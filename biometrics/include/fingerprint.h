@@ -260,6 +260,11 @@ typedef struct fingerprint_device {
      */
     int (*authenticate)(struct fingerprint_device *dev, uint64_t operation_id, uint32_t gid);
 
+    /*
+     * Prize fingerprint extension command.
+     */
+    int (*sendCustomizedCommand)(struct fingerprint_device __unused *dev, uint32_t cmd, uint32_t param);
+
     /* Reserved for backward binary compatibility */
     void *reserved[4];
 } fingerprint_device_t;
