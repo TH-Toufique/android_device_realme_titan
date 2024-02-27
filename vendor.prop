@@ -106,7 +106,6 @@ dalvik.vm.heapminfree=8m
 dalvik.vm.heapmaxfree=48m
 
 # Display
-ro.gfx.driver.0=com.mediatek.mt6877.gamedriver
 debug.mediatek.disp_decompress=1
 debug.mediatek.appgamepq_compress=1
 ro.opengles.version=196610
@@ -144,6 +143,7 @@ ro.vendor.pq.mtk_video_transition=0
 ro.vendor.mtk_backlight_hwc_support=0
 ro.vendor.mtk_blulight_def_support=1
 ro.vendor.mtk_hdr_video_support=1
+ro.vendor.mtk_aod_support=1
 
 # FM Radio
 persist.vendor.connsys.fm_chipid=mt6635
@@ -199,7 +199,7 @@ vendor.af.threshold.src_and_effect_count=5
 
 # MediaTek
 ro.vendor.mediatek.version.branch=alps-mp-s0.mp1
-ro.vendor.mediatek.version.release=alps-mp-s0.mp1-V14.105
+ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc16sp-pr9-V1
 ro.vendor.mediatek.platform=MT6877
 
 # Misc
@@ -256,7 +256,8 @@ ro.vendor.radio.max.multisim=dsds
 telephony.active_modems.max_count=2
 persist.vendor.mtk_sim_switch_policy=2
 persist.vendor.md_c2k_cap_dep_check=0
-persist.vendor.factory.GB2312=yes
+persist.vendor.factory.GB2312=no
+ro.vendor.mtk_tb_wifi_3g_mode=0
 ro.vendor.num_md_protocol=2
 telephony.lteOnCdmaDevice=1
 ro.vendor.md_prop_ver=1
