@@ -51,6 +51,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     if (!mDevice) {
         ALOGE("Can't open HAL module");
     }
+    goodixExtCmd = reinterpret_cast<int32_t (*)(struct fingerprint_device __unused *, uint32_t, uint32_t)>(mDevice->reserved[0]);
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
@@ -66,6 +67,7 @@ BiometricsFingerprint::~BiometricsFingerprint() {
         return;
     }
     mDevice = nullptr;
+    goodixExtCmd = nullptr;
 }
 
 Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
@@ -73,10 +75,12 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    goodixExtCmd(0, 1, 0);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    goodixExtCmd(0, 0, 0);
     return Void();
 }
 
