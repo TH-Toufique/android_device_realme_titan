@@ -74,7 +74,6 @@ PRODUCT_PACKAGES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.common-V1-ndk_platform.vendor \
     android.hardware.biometrics.fingerprint@2.3-service.RMX3686
 
 # Boot control
