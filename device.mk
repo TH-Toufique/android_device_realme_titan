@@ -220,6 +220,26 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+PRODUCT_PACKAGES += \
+    FrameworksResOverlayRMX3686 \
+    SettingsOverlayRMX3686 \
+    SettingsProviderOverlayRMX3686 \
+    SystemUIOverlayRMX3686 \
+    TelephonyOverlayRMX3686 \
+    TetheringResMainlineOverlay \
+    TetheringResOverlay \
+    WifiResMainlineOverlay \
+    WifiResOverlay
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-mediatek \

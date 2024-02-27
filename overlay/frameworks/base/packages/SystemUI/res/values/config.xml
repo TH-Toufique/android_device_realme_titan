@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2009, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+    <!-- Color of the UDFPS pressed view -->
+    <color name="config_udfpsColor">#ffffff</color>
+
+    <!-- Use framework FOD dimming instead of kernel dimming -->
+    <bool name="config_udfpsFrameworkDimming">true</bool>
+
+    <!-- Array of brightness-alpha lut for framework dimming -->
+    <string-array name="config_udfpsDimmingBrightnessAlphaArray" translatable="false">
+        <item>0,239</item>
+        <item>14,237</item>
+        <item>28,237</item>
+        <item>41,236</item>
+        <item>138,233</item>
+        <item>276,228</item>
+        <item>414,220</item>
+        <item>551,213</item>
+        <item>689,205</item>
+        <item>827,198</item>
+        <item>965,190</item>
+        <item>1103,183</item>
+        <item>1241,176</item>
+        <item>1378,169</item>
+        <item>1516,163</item>
+        <item>1654,157</item>
+        <item>1792,149</item>
+        <item>1930,143</item>
+        <item>2068,138</item>
+        <item>2205,131</item>
+        <item>2343,123</item>
+        <item>2481,116</item>
+        <item>2619,109</item>
+        <item>2757,101</item>
+        <item>2895,95</item>
+        <item>3033,90</item>
+        <item>3170,84</item>
+        <item>3308,78</item>
+        <item>3446,70</item>
+        <item>3460,69</item>
+        <item>3474,69</item>
+        <item>3487,69</item>
+        <item>3501,67</item>
+        <item>3515,66</item>
+    </string-array>
+
+    <!-- Brightness range min for udfps dimming -->
+    <integer name="config_udfpsDimmingBrightnessMin">0</integer>
+
+    <!-- Brightness range max for udfps dimming -->
+    <integer name="config_udfpsDimmingBrightnessMax">3515</integer>
+
+    <!-- The amount of delay to add when disabling the dimming.
+    This is used to prevent flickers due to the dimming being disabled
+    before the screen has had chance to switch out of HBM mode -->
+    <integer name="config_udfpsDimmingDisableDelay">5</integer>
+
+    <!-- Udfps animation -->
+    <dimen name="udfps_animation_offset">3dp</dimen>
+
+</resources>
