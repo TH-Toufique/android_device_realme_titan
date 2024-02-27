@@ -299,6 +299,15 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.recovery.mt6877.rc \
     init.sensor_2_0.rc \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    meta_init.vendor.rc \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \
