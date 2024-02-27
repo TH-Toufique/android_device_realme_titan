@@ -54,6 +54,10 @@ function blob_fixup {
         vendor/lib64/libwifi-hal-mtk.so)
             "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
             ;;
+        vendor/lib64/hw/hwcomposer.mt6877.so)
+            sed -i "s/OnScreenFingerprintDimLayer/SurfaceView[UdfpsController/" "${2}"
+            ;;
+
     esac
 }
 
