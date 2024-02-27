@@ -163,6 +163,9 @@ PRODUCT_PACKAGES += \
     android.hardware.lights-service.mediatek \
     android.hardware.light@2.0.vendor
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_PACKAGES += \
