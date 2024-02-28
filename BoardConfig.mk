@@ -6,11 +6,13 @@
 
 DEVICE_PATH := device/realme/RMX3686
 
+ALLOW_MISSING_DEPENDENCIES=true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS +:= \
+AB_OTA_PARTITIONS := \
 		boot \
 		dtbo \
 		odm \
@@ -78,7 +80,7 @@ TARGET_KERNEL_SOURCE := kernel/realme/mt6877
 TARGET_KERNEL_CONFIG := titan_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
+TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/clang-$(TARGET_KERNEL_CLANG_VERSION)
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_RECOVERY_AS_BOOT := true
@@ -179,8 +181,8 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/framework_compatibility_matrix.xml
+#    vendor/lineage/config/device_framework_matrix.xml
 
 # VNDK
 BOARD_VNDK_VERSION := current
