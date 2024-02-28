@@ -19,7 +19,7 @@ include $(BUILD_PREBUILT)
 LOCAL_PATH := hardware/interfaces/wifi/1.6/default
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi@1.0-service-lazy
+LOCAL_MODULE := android.hardware.wifi@1.0-service-lazy.
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_CPPFLAGS := -Wall -Werror -Wextra

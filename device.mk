@@ -4,6 +4,16 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Handling prebuilt kernel for AOSP
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/realme/RMX3686/prebuilts/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
