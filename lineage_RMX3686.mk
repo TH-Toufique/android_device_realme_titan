@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 The aospOS Project
+# Copyright (C) 2024 The lineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,14 +8,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common aosp stuff.
-#$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from ossi device
 $(call inherit-product, device/realme/RMX3686/device.mk)
 
 PRODUCT_DEVICE := RMX3686
-PRODUCT_NAME := aosp_RMX3686
+PRODUCT_NAME := lineage_RMX3686
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3686
 PRODUCT_MANUFACTURER := realme
